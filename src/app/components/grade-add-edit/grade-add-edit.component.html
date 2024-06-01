@@ -1,0 +1,102 @@
+<mat-form-field class="field">
+    <mat-label>Student Id </mat-label>
+    <input matInput name="studentId" type="text" [(ngModel)]="createGrade.studentId">
+</mat-form-field>
+@if (!!errorObj?.['Student Id']) {
+    <mat-error class="field_error">{{errorObj?.['Student Id']}}</mat-error>
+} 
+
+<mat-form-field class="field">
+    <mat-label>Name </mat-label>
+    <input matInput name="courseName" type="text" [(ngModel)]="createGrade.courseName">
+</mat-form-field>
+@if (!!errorObj?.['Name']) {
+    <mat-error class="field_error">{{errorObj?.['Name']}}</mat-error>
+} 
+<mat-form-field class="field">
+    <mat-label>Course Description</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.courseDescription"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Course Description']) {
+    <mat-error class="field_error">{{errorObj?.['Course Description']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Choose a date due</mat-label>
+    <input matInput [matDatepicker]="picker" name="dueDate" [(ngModel)]="createGrade.dueDate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+@if (!!errorObj?.['$.dueDate']) {
+    <mat-error class="field_error">{{errorObj?.['$.dueDate']}}</mat-error>
+}
+@if (!!errorObj?.['Due Date']) {
+    <mat-error class="field_error">{{errorObj?.['Due Date']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Credits</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.credits"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Credits']) {
+    <mat-error class="field_error">{{errorObj?.['Credits']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Instructor Name</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.instructorName"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Instructor Name']) {
+    <mat-error class="field_error">{{errorObj?.['Instructor Name']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Assignment Name</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.assignmentName"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Assignment Name']) {
+    <mat-error class="field_error">{{errorObj?.['Assignment Name']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Assignment Description</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.assignmentDescription"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Assignment Description']) {
+    <mat-error class="field_error">{{errorObj?.['Assignment Description']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Max Points</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.maxPoints"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Max Points']) {
+    <mat-error class="field_error">{{errorObj?.['Max Points']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Points Earned</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.pointsEarned"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Points Earned']) {
+    <mat-error class="field_error">{{errorObj?.['Points Earned']}}</mat-error>
+}
+<mat-form-field class="field">
+    <mat-label>Final Grade</mat-label>
+    <textarea matInput [(ngModel)]="createGrade.finalGrade"></textarea>
+</mat-form-field>
+@if (!!errorObj?.['Final Grade']) {
+    <mat-error class="field_error">{{errorObj?.['Final Grade']}}</mat-error>
+}
+
+<mat-form-field class="field">
+    <mat-label>Choose a enrollment date</mat-label>
+    <input matInput [matDatepicker]="picker" name="enrollmentDate" [(ngModel)]="createGrade.enrollmentDate">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+@if (!!errorObj?.['$.enrollmentDate']) {
+    <mat-error class="field_error">{{errorObj?.['$.enrollmentDate']}}</mat-error>
+}
+@if (!!errorObj?.['Enrollment date']) {
+    <mat-error class="field_error">{{errorObj?.['Enrollment date']}}</mat-error>
+}
+
+<div class="buttons">
+    <button mat-flat-button (click)="clearForm()" color="accent">Clear</button>
+    <button mat-flat-button (click)="submitForm()" color="primary">{{isEdit ? 'Edit' : 'Create'}}</button>
+</div>

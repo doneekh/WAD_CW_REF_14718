@@ -1,0 +1,10 @@
+<mat-toolbar class="navbar">
+    <div class="navbar_logo" (click)="redirect('')">
+        <span class="navbar_logo_text">Students App</span>
+    </div>
+    <div class="navbar_items">
+        <button mat-flat-button (click)="redirect('grade')">Grades</button>
+        <button mat-flat-button (click)="redirect('student')">Students</button>
+    </div>
+    <button mat-flat-button color="primary" [disabled]="disabled" (click)="create()">Create</button>
+</mat-toolbar>

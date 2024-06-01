@@ -1,0 +1,36 @@
+<div class="detail">
+    <h1>{{ title }} Detail</h1>
+    @for (item of detailIter; track $index) {
+        @if (item[0] !== 'grade' && item[0] !== 'notes' && item[0] !== 'description') {
+            <div class="detail_item">
+                <p class="detail_item_key">{{item[0]}}</p>
+                <span class="detail_item_dots"></span>
+                <p>{{item[1] || 'null'}}</p>
+            </div>
+        }
+    }
+
+    <p>
+        {{ detail.description }}
+    </p>
+    <p>
+        {{ detail.notes }}
+    </p>
+
+    @if (detail.grade) {
+        <h1>Student's grade Detail</h1>
+        @for (item of gradeIter; track $index) {
+            @if (item[0] !== 'description') {
+                <div class="detail_item">
+                    <p class="detail_item_key">{{item[0]}}</p>
+                    <span class="detail_item_dots"></span>
+                    <p>{{item[1]}}</p>
+                </div>
+            }
+        }
+    }
+
+    <p>
+        {{ gradeDesc }}
+    </p>
+</div>
